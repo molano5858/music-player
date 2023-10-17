@@ -58,4 +58,38 @@ function loadSong(song) {
   title.textContent = song.displayName;
   artist.textContent = song.artist;
   music.src = `./music/${song.name}.mp3`;
+  image.src = `./img/${song.name}.jpg`;
 }
+
+// prev / next functions
+let currentSong = 0;
+function prevSong() {
+  if (currentSong === 0) {
+    currentSong = 3;
+    loadSong(songs[currentSong]);
+    playSong();
+  } else {
+    currentSong--;
+    loadSong(songs[currentSong]);
+    playSong();
+  }
+}
+
+function nextSong() {
+  if (currentSong < songs.length - 1) {
+    currentSong++;
+    loadSong(songs[currentSong]);
+    playSong();
+  } else {
+    currentSong = 0;
+    loadSong(songs[currentSong]);
+    playSong();
+  }
+}
+
+// onLoad - load the first song
+loadSong(songs[currentSong]);
+
+// next / prev buttons event linsteners
+prevBtn.addEventListener("click", prevSong);
+nextBtn.addEventListener("click", nextSong);
