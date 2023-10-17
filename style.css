@@ -83,12 +83,20 @@ h3 {
   top: -15px;
   left: 120px;
   width: 200px;
+  margin-bottom: 16px;
 }
 
 .fas {
   font-size: 30px;
   color: rgb(129, 129, 129);
   margin-right: 30px;
+  cursor: pointer;
+  /* prevent user select the icon as text */
+  user-select: none;
+}
+
+.fas:hover {
+  color: #712efc;
 }
 
 .main-button {
