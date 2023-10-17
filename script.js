@@ -139,3 +139,5 @@ nextBtn.addEventListener("click", nextSong);
 music.addEventListener("timeupdate", updateProgressBar);
 // click progress bar listener
 progressContainer.addEventListener("click", setProgressBar);
+// when a song ends, play the next automatically
+music.addEventListener("ended", nextSong);
